@@ -6,7 +6,7 @@ class Snake:
     def __init__(self):
         self.snakes = []
         self.create_snake()
-
+        self.head = self.snakes[0]
 
     def create_snake(self):
         for i in SEGMENT_CORDS:
@@ -18,6 +18,14 @@ class Snake:
         new_segment.penup()
         new_segment.goto(position)
         self.snakes.append(new_segment)
+
+    def reset_snake(self):
+        for seg in self.snakes:
+            seg.goto(1000, 1000)
+        self.snakes.clear()
+        self.create_snake()
+        self.head = self.snakes[0]
+
 
     def extend(self):
         self.add_segment(self.snakes[-1].position())
