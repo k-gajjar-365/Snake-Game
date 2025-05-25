@@ -46,5 +46,5 @@ while is_on:
             snake.reset_snake()
             score.reset_score()
             time.sleep(0.5)
-
+    
 screen.exitonclick()
