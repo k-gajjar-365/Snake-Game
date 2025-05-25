@@ -4,11 +4,12 @@ from food import Food
 ALIGNMENT = "center"
 FONT = ("Courier",20,"bold")
 
-
+# Returns current score from data.txt
 def get_score():
     with open("data.txt", mode="r") as file:
         return int(file.read())
-
+        
+# Write current highest score into data.txt 
 def write_score(highest_score):
     with open("data.txt","w") as file:
         file.write(str(highest_score))
